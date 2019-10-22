@@ -6,16 +6,16 @@
 *****************/
 
 // COLORS
-$background-color:rgb(106, 119, 83);
-$background-text-color: rgba(231, 231, 231, 0.835);
+$background-color:rgb(255, 253, 253);
+$background-text-color: rgba(0, 0, 0, 0.835);
 $course-bgr-color: rgb(255, 123, 0);
-$course-color: white;
+$course-color: rgb(8, 8, 8);
 $input-border: 2px solid rgb(255, 123, 0);
 $btn-bgr-color: rgb(255, 123, 0);
 $btn-txt-color: white;
-$tr-bgr-color: #131111;
+$tr-bgr-color: #3a9077;
 $th-bgr-color:rgb(255, 123, 0);
-$th-color:rgb(8, 8, 8);
+$th-color:rgb(0, 0, 0);
 
 
 // SIZE AND WIDTH
@@ -53,6 +53,13 @@ table{
   margin: auto;
 }
 
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  color: black;
+}
 .input-container {
   display: -ms-flexbox; /* IE10 */
   display: flex;

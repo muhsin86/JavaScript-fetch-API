@@ -57,11 +57,10 @@ function addCourse(e) {
 
         inputCleaner();
 }
-
+// CLEAR ALL INPUT FIELDS EFTER SUBMIT BUTTON CLICKED...
 function inputCleaner() {
     document.getElementById('code').value = '';
     document.getElementById('name').value = '';
     document.getElementById('progression').value = '';
     document.getElementById('link').value = '';
-
 }

@@ -1,7 +1,7 @@
 "use strict";
 
 function getCourses() {
-  fetch("http://studenter.miun.se/~momo1600/writeable/DT173G/PHP-restful-web-services/", {
+  fetch("http://localhost/PHP-restful-web-services-master/", {
     method: "GET"
   }).then(function (e) {
     return e.json();
@@ -9,10 +9,6 @@ function getCourses() {
     e.forEach(function (e) {
       document.querySelector("tbody").innerHTML += "\n                    <td>".concat(e.course_code, "</td>\n                    <td>").concat(e.course_name, "</td>\n                    <td>").concat(e.course_progression, "</td>\n                    <td><a href=\"").concat(e.course_link, "\" target=\"_blank\">L\xE4nk</a></td>\n                    ");
     });
-  }).then(function (e) {
-    return console.log(e);
-  })["catch"](function (e) {
-    return console.log("Error message:", e.statusText);
   });
 }
 
@@ -24,7 +20,7 @@ function addCourse(e) {
     course_progression: document.getElementById("progression").value,
     course_link: document.getElementById("link").value
   };
-  fetch("http://studenter.miun.se/~momo1600/writeable/DT173G/PHP-restful-web-services/", {
+  fetch("http://localhost/PHP-restful-web-services-master/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -35,11 +31,11 @@ function addCourse(e) {
       status: e.status,
       statusText: e.statusText
     });
-  }).then(function (e) {
-    return console.log(e);
-  })["catch"](function (e) {
-    return console.log("Error message:", e.statusText);
-  });
+  }), inputCleaner();
+}
+
+function inputCleaner() {
+  document.getElementById("code").value = "", document.getElementById("name").value = "", document.getElementById("progression").value = "", document.getElementById("link").value = "";
 }
 
 document.getElementById("courseform").addEventListener("submit", addCourse), window.addEventListener("load", getCourses);
