@@ -31,11 +31,7 @@ function addCourse(e) {
       status: e.status,
       statusText: e.statusText
     });
-  }), inputCleaner();
-}
-
-function inputCleaner() {
-  document.getElementById("code").value = "", document.getElementById("name").value = "", document.getElementById("progression").value = "", document.getElementById("link").value = "";
+  }), document.getElementById("code").value = "", document.getElementById("name").value = "", document.getElementById("progression").value = "", document.getElementById("link").value = "";
 }
 
 document.getElementById("courseform").addEventListener("submit", addCourse), window.addEventListener("load", getCourses);

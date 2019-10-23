@@ -40,14 +40,14 @@ function addCourse(e) {
         "course_progression": progression,
         "course_link": link
     };
+
     fetch('http://localhost/PHP-restful-web-services-master/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(myCourse)
-    })
-        .then((res) => {
+    }).then((res) => {
             if (res.ok) {
                 return res.json()
             } else {
@@ -55,10 +55,7 @@ function addCourse(e) {
             }
         });
 
-        inputCleaner();
-}
-// CLEAR ALL INPUT FIELDS EFTER SUBMIT BUTTON CLICKED...
-function inputCleaner() {
+    // CLEAR ALL THE FIELDS EFETER SUBMITING THE BUTTON SUBMIT...
     document.getElementById('code').value = '';
     document.getElementById('name').value = '';
     document.getElementById('progression').value = '';
